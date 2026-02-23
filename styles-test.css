@@ -287,4 +287,52 @@ body.test-page,.muted,p,a,.skill{font-family:Inter, system-ui, -apple-system, 'S
 .nav a{color:var(--muted)}
 .site-header .logo{color:var(--text)}
 .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white}
+
 .btn.outline{border-color:rgba(2,6,23,0.06);color:var(--text)}
+
+/* Responsive adjustments */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;padding:36px}
+  
+  /* Mobile: smaller avatar and remove drop-shadow to avoid rendering issues */
+  .avatar{width:180px;height:auto;max-width:none;margin-top:20px;border-radius:0;filter:none}
+  
+  .site-footer{flex-direction:column;gap:12px;text-align:center}
+  .exp-grid{grid-template-columns:1fr}
+  
+  /* --- NEW FIXES START HERE --- */
+
+  /* 1. Hero Buttons Fix */
+  /* This stacks the buttons neatly and removes the weird indentation */
+  .hero-ctas {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 12px; /* Space between them */
+    align-items: flex-start; /* Align to the left */
+  }
+  
+  /* Remove the left margin that was pushing the resume button to the right */
+  .hero-ctas .btn.outline {
+    margin-left: 0; 
+  }
+
+  /* 2. Conclusion Image Fix */
+  /* This prevents the weird cropping and makes the image smaller */
+  #conclusion .conclusion-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  #conclusion .conclusion-image {
+    text-align: center; /* Centers the image container */
+    margin-top: 20px;
+  }
+
+  #conclusion .conclusion-image img {
+    width: 100%;
+    max-width: 240px; /* Limits width so it looks "small" as requested */
+    height: auto;     /* Auto height ensures the image is not cut/cropped weirdly */
+    margin: 0 auto;
+    display: block;
+  }
+  /* --- NEW FIXES END HERE --- */
+}
