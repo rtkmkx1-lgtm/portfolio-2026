@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rtkmkx1-lgtm.github.io/portfolio-2026/sitemap.xml
